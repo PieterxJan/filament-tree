@@ -5,6 +5,7 @@ namespace SolutionForest\FilamentTree\Components;
 use Filament\Schemas\Schema;
 use Filament\Support\Components\ViewComponent;
 use Illuminate\Database\Eloquent\Model;
+use SolutionForest\FilamentTree\Actions\ActionGroup;
 use SolutionForest\FilamentTree\Concern\BelongsToLivewire;
 use SolutionForest\FilamentTree\Contract\HasTree;
 use SolutionForest\FilamentTree\Support\Utils;
@@ -20,6 +21,8 @@ class Tree extends ViewComponent
     protected int $maxDepth = 999;
 
     protected array $actions = [];
+
+    protected array $toolbarActions = [];
 
     public const LOADING_TARGETS = ['activeLocale'];
 
@@ -51,6 +54,13 @@ class Tree extends ViewComponent
         return $this;
     }
 
+    public function toolbarActions(array $actions): static
+    {
+        $this->toolbarActions = $actions;
+
+        return $this;
+    }
+
     public function getMaxDepth(): int
     {
         return $this->maxDepth;
@@ -59,6 +69,51 @@ class Tree extends ViewComponent
     public function getActions(): array
     {
         return $this->actions;
+    }
+
+    public function getAction($name)
+    {
+        foreach ($this->actions as $action) {
+
+            if ($action instanceof FilamentActionsActionGroup || $action instanceof ActionGroup) {
+                if ($groupedAction = collect($action->getFlatActions())->get($name)) {
+                    return $groupedAction;
+                } else {
+                    continue;
+                }
+            }
+
+            if ($action->getName() === $name) {
+                return $action;
+            }
+        }
+
+        return null;
+    }
+
+    public function getToolbarActions(): array
+    {
+        return $this->toolbarActions;
+    }
+
+    public function getToolbarAction($name)
+    {
+        foreach ($this->toolbarActions as $action) {
+
+            if ($action instanceof FilamentActionsActionGroup || $action instanceof ActionGroup) {
+                if ($groupedAction = collect($action->getFlatActions())->get($name)) {
+                    return $groupedAction;
+                } else {
+                    continue;
+                }
+            }
+
+            if ($action->getName() === $name) {
+                return $action;
+            }
+        }
+
+        return null;
     }
 
     public function getModel(): string
@@ -71,14 +126,16 @@ class Tree extends ViewComponent
         if (! $record) {
             return null;
         }
+
         return $record->getAttributeValue($record->getKeyName());
     }
 
-    public function getParentKey(?Model $record):?string
+    public function getParentKey(?Model $record): ?string
     {
         if (! $record) {
             return null;
         }
+
         return $record->getAttributeValue((method_exists($record, 'determineParentKey') ? $record->determineParentColumnName() : Utils::parentColumnName()));
     }
 

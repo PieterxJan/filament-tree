@@ -2,7 +2,7 @@
     'actions',
     'alignment' => null,
     'record' => null,
-    'wrap' => false,
+    // 'wrap' => false,
 ])
 
 @php
@@ -15,7 +15,7 @@
             if (! $action instanceof \SolutionForest\FilamentTree\Actions\Modal\Action) {
                 $action->record($record);
             }
-            
+
             return $action->isVisible();
         },
     );
@@ -38,3 +38,4 @@
 >
     <x-filament-actions::group :actions="$actions"/>
 </div>
+<x-filament::actions :actions="$actions" :alignment="$alignment" :fullWidth="true" class="fi-tree-actions"/>

@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Database\Eloquent\Model;
 use SolutionForest\FilamentTree\Components\Tree;
 
-class ViewAction extends Action
+class ViewAction extends BaseViewAction
 {
     protected ?Closure $mutateRecordDataUsing = null;
 
