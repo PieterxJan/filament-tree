@@ -2,18 +2,18 @@
 
 namespace SolutionForest\FilamentTree\Forms\Components;
 
-use Filament\Schemas\Components\Concerns\BelongsToModel;
-use Filament\Schemas\Components\Concerns\HasState;
-use Throwable;
 use Closure;
 use Filament\Forms\Components\Field;
 use Filament\Schemas\Components\Concerns\BelongsToModel;
+use Filament\Schemas\Components\Concerns\BelongsToModel;
+use Filament\Schemas\Components\Concerns\HasState;
 use Filament\Schemas\Components\Concerns\HasState;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use SolutionForest\FilamentTree\Concern\ModelTree;
+use Throwable;
 use Throwable;
 
 class Tree extends Field

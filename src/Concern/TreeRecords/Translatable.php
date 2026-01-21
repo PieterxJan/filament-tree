@@ -2,12 +2,12 @@
 
 namespace SolutionForest\FilamentTree\Concern\TreeRecords;
 
-use SolutionForest\FilamentTree\Actions\EditAction;
-use SolutionForest\FilamentTree\Actions\ViewAction;
 use Filament\Actions\CreateAction;
 use Illuminate\Database\Eloquent\Model;
 use SolutionForest\FilamentTree\Actions;
 use SolutionForest\FilamentTree\Actions\EditAction;
+use SolutionForest\FilamentTree\Actions\EditAction;
+use SolutionForest\FilamentTree\Actions\ViewAction;
 use SolutionForest\FilamentTree\Actions\ViewAction;
 use SolutionForest\FilamentTree\Concern\HasTranslatableRecords;
 

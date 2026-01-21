@@ -2,14 +2,13 @@
 
 namespace SolutionForest\FilamentTree\Pages;
 
+use Filament\Actions\Action as FilamentActionsAction;
+use Filament\Actions\CreateAction;
+use Filament\Pages\Page;
+use Filament\Schemas\Components\Component;
 use SolutionForest\FilamentTree\Actions\DeleteAction;
 use SolutionForest\FilamentTree\Actions\EditAction;
 use SolutionForest\FilamentTree\Actions\ViewAction;
-use Filament\Schemas\Components\Component;
-use Filament\Actions\Action as FilamentActionsAction;
-use Filament\Actions\CreateAction;
-use Filament\Pages\Actions\Action as PagesAction;
-use Filament\Pages\Page;
 use SolutionForest\FilamentTree\Concern\TreePageTrait;
 use SolutionForest\FilamentTree\Contract\HasTree;
 

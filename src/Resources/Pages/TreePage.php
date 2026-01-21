@@ -2,11 +2,8 @@
 
 namespace SolutionForest\FilamentTree\Resources\Pages;
 
-use Filament\Schemas\Schema;
 use Filament\Actions\CreateAction;
-use Filament\Pages\Concerns\InteractsWithFormActions;
-use Filament\Panel;
-use Filament\Resources\Pages\PageRegistration;
+use Filament\Schemas\Schema;
 use Illuminate\Database\Eloquent\Model;
 use SolutionForest\FilamentTree\Actions\DeleteAction;
 use SolutionForest\FilamentTree\Actions\EditAction;

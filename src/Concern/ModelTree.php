@@ -2,13 +2,13 @@
 
 namespace SolutionForest\FilamentTree\Concern;
 
-use InvalidArgumentException;
-use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use InvalidArgumentException;
 use InvalidArgumentException;
 use SolutionForest\FilamentTree\Support\Utils;
 
@@ -117,7 +117,7 @@ trait ModelTree
     /**
      * Format all nodes as tree.
      *
-     * @param array|Collection|null $nodes
+     * @param  array|Collection|null  $nodes
      */
     public function toTree($nodes = null): array
     {

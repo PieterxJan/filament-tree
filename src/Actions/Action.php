@@ -2,13 +2,11 @@
 
 namespace SolutionForest\FilamentTree\Actions;
 
-
+use Filament\Actions\Action as BaseAction;
 use Filament\Actions\Concerns\HasMountableArguments;
 use Filament\Actions\Concerns\InteractsWithRecord;
-use Filament\Actions\Action as BaseAction;
 use Illuminate\Database\Eloquent\Model;
 use SolutionForest\FilamentTree\Concern\Actions\HasTree;
-use SolutionForest\FilamentTree\Concern\Actions\TreeActionTrait;
 use SolutionForest\FilamentTree\Concern\BelongsToTree;
 
 class Action extends BaseAction implements HasTree
